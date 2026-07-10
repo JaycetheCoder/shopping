@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Techs Shop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      background: #111827;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #38bdf8;
+    }
+
+    nav a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #e5e7eb;
+    }
+
+    .hero {
+      padding: 40px;
+      text-align: center;
+      background: radial-gradient(circle at top, #1d4ed8 0, #020617 55%);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #cbd5f5;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .hero button {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 999px;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .hero button:hover {
+      background: #0ea5e9;
+    }
+
+    .container {
+      padding: 30px 40px 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      border-left: 4px solid #38bdf8;
+      padding-left: 10px;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .category-pill {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      background: #020617;
+      color: #9ca3af;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .category-pill.active {
+      background: #38bdf8;
+      color: #0f172a;
+      border-color: #38bdf8;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #020617;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.8);
+      border-color: #38bdf8;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .product-tag {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 8px;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 10px;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .price {
+      font-weight: 700;
+      color: #22c55e;
+    }
+
+    .buy-btn {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: none;
+      background: #38bdf8;
+      color: #0f172a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background: #0ea5e9;
+    }
+
+    .footer {
+      padding: 20px 40px;
+      border-top: 1px solid #1f2937;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+      background: #020617;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Techs Shop</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Deals</a>
+      <a href="#">Support</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Premium Items, Clean Vibes.</h1>
+    <p>Browse curated gear, accessories, and digital items. Built for players who want their setup and style to feel intentional.</p>
+    <button>Browse Shop</button>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">Categories</h2>
+    <div class="categories">
+      <div class="category-pill active">All</div>
+      <div class="category-pill">Gaming</div>
+      <div class="category-pill">Accessories</div>
+      <div class="category-pill">Apparel</div>
+      <div class="category-pill">Digital</div>
+    </div>
+
+    <h2 class="section-title">Featured Products</h2>
+
+    <div class="products-grid">
+
+    
+      <div class="product-card">
+        <img src="OIP.jpg" alt="Hydra Hoodie">
+        <div class="product-title">Hydra Hoodie</div>
+        <div class="product-tag">Apparel • Limited Drop</div>
+        <div class="product-desc">Soft, oversized hoodie inspired by raid energy. Perfect for late-night grinding sessions.</div>
+        <div class="product-footer">
+          <span class="price">£23.99</span>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="product-card">
+        <img src="OIP (1).jpg" alt="Draco V4 Mousepad">
+        <div class="product-title">Draco V4 Mousepad</div>
+        <div class="product-tag">Accessories • Gaming</div>
+        <div class="product-desc">Extended desk pad with smooth glide and a dark, minimal design.</div>
+        <div class="product-footer">
+          <span class="price">£18.99</span>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="product-card">
+        <img src="th.jpg" alt="Energy Core Keycap Set">
+        <div class="product-title">Energy Core Keycap Set</div>
+        <div class="product-tag">Accessories • Keyboard</div>
+        <div class="product-desc">Custom keycaps with subtle neon accents.</div>
+        <div class="product-footer">
+          <span class="price">£39.99</span>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      
+      <div class="product-card">
+        <img src="OIP (2).jpg" alt="Gaming PC">
+        <div class="product-title">Gaming PC</div>
+        <div class="product-tag">Gaming • Assets</div>
+        <div class="product-desc">Clean visuals and powerful performance for all your games.</div>
+        <div class="product-footer">
+          <span class="price">£914.99</span>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    © 2026 Tech Shop · All rights reserved · Support: support@tech.shop
+  </footer>
+
+</body>
+</html>
